@@ -1,1 +1,6 @@
 node_modules
+public
+.cache
+src/gdpr/*.json
+tmp
+.vscode
