@@ -31,10 +31,12 @@ const IndexPage = props => {
             </a>
           </div>
 
-          { speakers.map(speaker => (
-            <PresentationCard key={speaker.id} data={speaker.node.frontmatter} />
+          {speakers.map(speaker => (
+            <PresentationCard
+              key={speaker.id}
+              data={speaker.node.frontmatter}
+            />
           ))}
-
         </section>
       </main>
       <Footer />
