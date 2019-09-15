@@ -37,38 +37,6 @@ body {
     }
 }
 
-.page-header {
-    margin-bottom: 36px;
-    &_wrapper {
-        align-items: center;
-        display: flex;
-        margin: {
-            right: auto;
-            left: auto;
-        }
-        max-width: 800px;
-    }
-}
-
-.page-logo {
-    display: block;
-    height: 60px;
-    margin-right: 12px;
-    width: 60px;
-    &_img {
-        display: block;
-        max-width: 100%;
-    }
-}
-
-.page-title {
-    color: #fff;
-    font: {
-        family: $font-secondary;
-        size: 18px;
-    }
-    line-height: 26px;
-}
 
 .triangle {
     display: none;
@@ -140,13 +108,25 @@ body {
     }
 }
 
+.program {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+}
+
 .days {
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+
     &_link {
-        background-color: $js-yellow;
+
+        background-color: desaturate($js-yellow, 50%);
         border-radius: 6px;
         color: #000;
-        display: inline-block;
+
         font: {
             family: $font-secondary;
             size: 18px;
@@ -165,8 +145,10 @@ body {
         &:first-of-type {
             margin-right: 24px;
         }
-        &:hover, &:focus {
-            background-color: lighten($js-yellow, 10%);
+        &:hover,
+        &:focus,
+        &.active {
+            background-color: $js-yellow;
         }
         &:active {
             background-color: darken($js-yellow, 15%);

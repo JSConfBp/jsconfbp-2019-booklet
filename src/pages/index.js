@@ -1,14 +1,31 @@
 import React, { useEffect, useState, useRef } from 'react'
-
+import classnames from 'classnames'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PresentationCard from '../components/PresentationCard'
 
+import schedule from '../../schedule'
+
 import './index.scss'
 
+const getDay = () => {
+  return 'js1'
+}
+
+const findSpeaker = (speakers, session) => {
+  const data = speakers.find(speaker => (speaker.node.parent.name === session))
+  if (!data) {
+    return {
+      session,
+      title: session
+    };
+  }
+  return Object.assign({}, data.node.frontmatter, { session })
+}
+
 const IndexPage = props => {
-  console.log(props.data.allMdx.edges)
   const speakers = props.data.allMdx.edges
+  const [day, setDay] = useState((new Date()).getDate() === 27 ? 'js2' : 'js1')
 
   return (
     <>
@@ -22,21 +39,52 @@ const IndexPage = props => {
       <Header />
       <main className="site_content">
         <section className="schedule">
+
           <div className="days">
-            <a className="days_link" href="#">
+            <a className={classnames('days_link', day === 'js1' ? 'active' : '')} onClick={ () => setDay('js1') }>
               Day 1
             </a>
-            <a className="days_link inactive" href="#">
+            <a className={classnames('days_link', day === 'js2' ? 'active' : '')} onClick={ () => setDay('js2') }>
               Day 2
             </a>
           </div>
 
-          {speakers.map(speaker => (
-            <PresentationCard
-              key={speaker.id}
-              data={speaker.node.frontmatter}
-            />
+          {Object.entries(schedule).map(([event, program]) => (
+            <div className={classnames('program', event, day === event ? 'show' : '')}>
+              {Object.entries(program)
+                .sort(([timeA], [timeB]) => {
+                  const a = parseInt(timeA)
+                  const b = parseInt(timeB)
+                  return a - b
+                })
+                .map(([time, session], index, sessions) => {
+                  const speaker = findSpeaker(speakers, session);
+                  speaker.time = time
+
+                  const date = (new Date())
+                  const hour = parseInt(time.slice(0,2), 10)
+                  const minute = parseInt(time.slice(2), 10)
+
+                  console.log(hour, minute);
+
+                  if (sessions[index+1]) {
+                    console.log(sessions[index+1][0]);
+                  }
+
+                  const onAir = (date.getHours() === hour) && (date.getMinutes() >= minute)
+
+                  return (
+                    <PresentationCard
+                      onAir={ onAir }
+                      key={ `day1-${time}-${session}` }
+                      id={ session }
+                      data={ speaker }
+                    />
+                  )
+              })}
+            </div>
           ))}
+
         </section>
       </main>
       <Footer />
