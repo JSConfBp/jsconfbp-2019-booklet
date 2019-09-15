@@ -65,7 +65,6 @@ const IndexPage = props => {
                   const hour = parseInt(time.slice(0,2), 10)
                   const minute = parseInt(time.slice(2), 10)
 
-                  console.log(hour, minute);
                   let onAir = (date.getHours() === hour) && (date.getMinutes() >= minute)
 
                   if (sessions[index+1]) {
@@ -76,11 +75,10 @@ const IndexPage = props => {
                     onAir = onAir && !((date.getHours() === nextHour) && (date.getMinutes() >= nextMinute))
                   }
 
-
                   return (
                     <PresentationCard
                       onAir={ onAir }
-                      key={ `day1-${time}-${session}` }
+                      key={ `${event}-${time}-${session}` }
                       id={ session }
                       data={ speaker }
                     />
