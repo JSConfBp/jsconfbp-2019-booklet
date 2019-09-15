@@ -1,13 +1,12 @@
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'http://2015.jsconfbp.com/info-screen/',
+    siteUrl: 'http://schedule.jsconfbp.com/',
     title: 'Info Screen',
     description: '',
     keywords: '',
     twitter: '@jsconfbp'
   },
-  pathPrefix: `/info-screen`,
   plugins: [
     `gatsby-plugin-mdx`,
     {

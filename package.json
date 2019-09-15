@@ -8,7 +8,7 @@
     "start": "npm run dev",
     "dev": "npx gatsby develop -p 8000",
     "postdev": "npm run format",
-    "build": "npx gatsby build --prefix-paths",
+    "build": "npx gatsby build",
     "postbuild": "npm run copy",
     "copy": "cp -Rf CNAME public",
     "develop": "gatsby develop -p 8000",
