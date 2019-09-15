@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useState } from 'react'
 import classnames from 'classnames'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -8,24 +8,20 @@ import schedule from '../../schedule'
 
 import './index.scss'
 
-const getDay = () => {
-  return 'js1'
-}
-
 const findSpeaker = (speakers, session) => {
-  const data = speakers.find(speaker => (speaker.node.parent.name === session))
+  const data = speakers.find(speaker => speaker.node.parent.name === session)
   if (!data) {
     return {
       session,
-      title: session
-    };
+      title: session,
+    }
   }
   return Object.assign({}, data.node.frontmatter, { session })
 }
 
 const IndexPage = props => {
   const speakers = props.data.allMdx.edges
-  const [day, setDay] = useState((new Date()).getDate() === 27 ? 'js2' : 'js1')
+  const [day, setDay] = useState(new Date().getDate() === 27 ? 'js2' : 'js1')
 
   return (
     <>
@@ -39,18 +35,30 @@ const IndexPage = props => {
       <Header />
       <main className="site_content">
         <section className="schedule">
-
           <div className="days">
-            <a className={classnames('days_link', day === 'js1' ? 'active' : '')} onClick={ () => setDay('js1') }>
+            <a
+              className={classnames('days_link', day === 'js1' ? 'active' : '')}
+              onClick={() => setDay('js1')}
+            >
               Day 1
             </a>
-            <a className={classnames('days_link', day === 'js2' ? 'active' : '')} onClick={ () => setDay('js2') }>
+            <a
+              className={classnames('days_link', day === 'js2' ? 'active' : '')}
+              onClick={() => setDay('js2')}
+            >
               Day 2
             </a>
           </div>
 
           {Object.entries(schedule).map(([event, program]) => (
-            <div className={classnames('program', event, day === event ? 'show' : '')}>
+            <div
+              key={event}
+              className={classnames(
+                'program',
+                event,
+                day === event ? 'show' : ''
+              )}
+            >
               {Object.entries(program)
                 .sort(([timeA], [timeB]) => {
                   const a = parseInt(timeA)
@@ -58,35 +66,40 @@ const IndexPage = props => {
                   return a - b
                 })
                 .map(([time, session], index, sessions) => {
-                  const speaker = findSpeaker(speakers, session);
+                  const speaker = findSpeaker(speakers, session)
                   speaker.time = time
 
-                  const date = (new Date())
-                  const hour = parseInt(time.slice(0,2), 10)
+                  const date = new Date()
+                  const hour = parseInt(time.slice(0, 2), 10)
                   const minute = parseInt(time.slice(2), 10)
 
-                  let onAir = (date.getHours() === hour) && (date.getMinutes() >= minute)
+                  let onAir =
+                    date.getHours() === hour && date.getMinutes() >= minute
 
-                  if (sessions[index+1]) {
-                    const nextDate = sessions[index+1][0]
-                    const nextHour = parseInt(nextDate.slice(0,2), 10)
+                  if (sessions[index + 1]) {
+                    const nextDate = sessions[index + 1][0]
+                    const nextHour = parseInt(nextDate.slice(0, 2), 10)
                     const nextMinute = parseInt(nextDate.slice(2), 10)
 
-                    onAir = onAir && !((date.getHours() === nextHour) && (date.getMinutes() >= nextMinute))
+                    onAir =
+                      onAir &&
+                      !(
+                        date.getHours() === nextHour &&
+                        date.getMinutes() >= nextMinute
+                      )
                   }
 
                   return (
                     <PresentationCard
-                      onAir={ onAir }
-                      key={ `${event}-${time}-${session}` }
-                      id={ session }
-                      data={ speaker }
+                      onAir={onAir}
+                      key={`${event}-${time}-${session}`}
+                      id={session}
+                      data={speaker}
                     />
                   )
-              })}
+                })}
             </div>
           ))}
-
         </section>
       </main>
       <Footer />

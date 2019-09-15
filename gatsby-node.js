@@ -7,14 +7,7 @@
 const path = require(`path`);
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions;
-
-  createRedirect({
-    fromPath: `/sponsoration/`,
-    isPermanent: true,
-    redirectInBrowser: true,
-    toPath: `/sponsorship/`,
-  })
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     resolve(
@@ -31,6 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
                       sourceInstanceName
                     }
                   }
+                  body
                 }
               }
             }
