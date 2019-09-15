@@ -66,12 +66,16 @@ const IndexPage = props => {
                   const minute = parseInt(time.slice(2), 10)
 
                   console.log(hour, minute);
+                  let onAir = (date.getHours() === hour) && (date.getMinutes() >= minute)
 
                   if (sessions[index+1]) {
-                    console.log(sessions[index+1][0]);
+                    const nextDate = sessions[index+1][0]
+                    const nextHour = parseInt(nextDate.slice(0,2), 10)
+                    const nextMinute = parseInt(nextDate.slice(2), 10)
+
+                    onAir = onAir && !((date.getHours() === nextHour) && (date.getMinutes() >= nextMinute))
                   }
 
-                  const onAir = (date.getHours() === hour) && (date.getMinutes() >= minute)
 
                   return (
                     <PresentationCard
