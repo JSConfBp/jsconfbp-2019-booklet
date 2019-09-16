@@ -1,23 +1,23 @@
 import React from 'react'
-
+import { Link } from 'gatsby'
 export default () => (
   <footer className="site_footer">
     <nav className="site_footer_nav">
       <ul className="site_footer_nav_list">
         <li className="site_footer_nav_list_item">
-          <a className="site_footer_nav_list_item_link" href="#">
+          <Link className="site_footer_nav_list_item_link" to="/map">
             Map
-          </a>
+          </Link>
         </li>
         <li className="site_footer_nav_list_item">
-          <a className="site_footer_nav_list_item_link" href="#">
-            Menu
-          </a>
+          <Link className="site_footer_nav_list_item_link" to="/">
+            Schedule
+          </Link>
         </li>
         <li className="site_footer_nav_list_item">
-          <a className="site_footer_nav_list_item_link" href="#">
+          <Link className="site_footer_nav_list_item_link" to="/contact">
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
