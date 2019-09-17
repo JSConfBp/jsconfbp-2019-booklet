@@ -7,7 +7,6 @@ import VenueMap from '../components/VenueMap'
 import './index.scss'
 
 const MapPage = props => {
-
   return (
     <>
       <svg
@@ -19,7 +18,7 @@ const MapPage = props => {
       </svg>
       <Header />
       <main className="site_content">
-		<VenueMap />
+        <VenueMap />
       </main>
       <Footer />
     </>

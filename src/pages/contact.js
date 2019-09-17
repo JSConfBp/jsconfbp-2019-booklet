@@ -7,7 +7,6 @@ import VenueMap from '../components/VenueMap'
 import './index.scss'
 
 const ContactPage = props => {
-
   return (
     <>
       <svg
@@ -19,11 +18,24 @@ const ContactPage = props => {
       </svg>
       <Header />
       <main className="site_content">
-		<div className="content">
-			<h2>Contact</h2>
-
-			<p>asdasd</p>
-		</div>
+        <div className="content contacts">
+          <h2>Contact</h2>
+			<p>
+				In person:<br />find any team member at the venue in bright gold t-shirts
+			</p>
+			<p>
+				Email: <br />
+				<a href="mailto:team@jsconfbp.com">team@jsconfbp.com</a>
+			</p>
+			<p>
+				Our DM's on Twitter are always open:<br />
+				<a href="https://twitter.com/jsconfbp">@jsconfbp</a>
+			</p>
+			<p>
+				In case of an emergency, you can call us on this number <br />
+          		00 36 70 389 1288
+		  	</p>
+        </div>
       </main>
       <Footer />
     </>
