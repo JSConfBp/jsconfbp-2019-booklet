@@ -13,7 +13,7 @@ const findSpeaker = (speakers, session) => {
     return {
       session,
       title: session.title,
-      activities: session.activities
+      activities: session.activities,
     }
   }
 

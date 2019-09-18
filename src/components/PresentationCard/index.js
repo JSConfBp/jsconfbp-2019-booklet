@@ -15,11 +15,13 @@ export default ({ data, id, onAir }) => {
       <p className="presentation_name">{name}</p>
       <p className="presentation_description">{title}</p>
 
-      {activities && (<ul className="activities">
-        {activities.map((activity, i) => (<li key={`activity_${i}`}>
-          { activity }
-        </li>))}
-      </ul>)}
+      {activities && (
+        <ul className="activities">
+          {activities.map((activity, i) => (
+            <li key={`activity_${i}`}>{activity}</li>
+          ))}
+        </ul>
+      )}
 
       {name && (
         <Link className="presentation_link" to={`/speakers/${id}`}>
