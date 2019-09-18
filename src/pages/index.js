@@ -9,13 +9,15 @@ import schedule from '../../schedule'
 import './index.scss'
 
 const findSpeaker = (speakers, session) => {
-  const data = speakers.find(speaker => speaker.node.parent.name === session)
-  if (!data) {
+  if (typeof session !== 'string') {
     return {
       session,
-      title: session,
+      title: session.title,
+      activities: session.activities
     }
   }
+
+  const data = speakers.find(speaker => speaker.node.parent.name === session)
   return Object.assign({}, data.node.frontmatter, { session })
 }
 
