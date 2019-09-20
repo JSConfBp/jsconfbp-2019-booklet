@@ -3,10 +3,10 @@ module.exports = {
 		'0930': {
 			title: 'Opening JSConf Budapest 2019',
 		},
-		'0945': 'mauricio_palma',
-		'1015': 'shelley_vohr',
-		'1045': 'jorge_marin',
-		'1115': {
+		'0950': 'mauricio_palma',
+		'1020': 'shelley_vohr',
+		'1050': 'jorge_marin',
+		'1120': {
 			title: 'Coffee break by TRESORIT',
 			activities: [
 				'Mozilla Minutes AMA/panel about MDN at the Mozilla Community Lounge',
