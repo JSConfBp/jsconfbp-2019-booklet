@@ -11,7 +11,7 @@ export default ({ classNameName = '' }) => (
       viewBox="0 0 1080 1920"
       className="venue-map"
     >
-      <g>
+      <g> 
 	<g>
 		<g>
 			<path className="st0" d="M37.8,781.6h152.5v14.1H37.8V781.6z M369.6,1254.9l-229.2-37.5l-1.8-2.6c0,0-39.1-56.8-48.9-71H31.6v-14.4
