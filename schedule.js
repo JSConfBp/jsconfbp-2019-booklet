@@ -9,7 +9,7 @@ module.exports = {
 		'1120': {
 			title: 'Coffee break by TRESORIT',
 			activities: [
-				'Mozilla Minutes AMA/panel about MDN at the Mozilla Community Lounge',
+				'Mozilla Minutes AMA/panel about MDN with Ali Spivak at the Mozilla Community Lounge',
 				'Recycle Workshop by RePityke in the Small Hall'
 			]
 		},
@@ -18,8 +18,9 @@ module.exports = {
 		'1300': {
 			title: 'Lunch by VACUUMLABS',
 			activities: [
-				'Hardware Hacking AMA/panel at the Mozilla Community Lounge',
+				'Hardware Hacking AMA/panel with Ramon Huidobro, Stephanie Nemeth, Tim Pietrusky at the Mozilla Community Lounge',
 				'Lightning talks and Demos at the Mozilla Community Lounge',
+				'WebVR Demos, JS Dance Mat Fun at the Mozilla Community Lounge',
 				'Recycle Workshop by RePityke in the Small Hall'
 			]
 		},
@@ -28,7 +29,8 @@ module.exports = {
 		'1530': {
 			title: 'Coffee break by TRESORIT',
 			activities: [
-				'Demos at the Mozilla Community Lounge',
+				'Lightning talks and Demos at the Mozilla Community Lounge',
+				'WebVR Demos, JS Dance Mat Fun at the Mozilla Community Lounge',
 			]
 		},
 		'1615': 'stephanie_nemeth',
@@ -51,7 +53,7 @@ module.exports = {
 		'1130': {
 			title: 'Coffee break by TRESORIT',
 			activities: [
-				'Mozilla Minutes (AMA/panel) aboout DevTools at the Mozilla Community Lounge',
+				'Mozilla Minutes (AMA/panel) aboout DevTools with Hui Jing Chen at the Mozilla Community Lounge',
 				'Recycle Workshop by RePityke in the Small Hall'
 			]
 		},
@@ -60,8 +62,9 @@ module.exports = {
 		'1315': {
 			title: 'Lunch by VACUUMLABS',
 			activities: [
-				'WebAssembly AMA/panel at the Mozilla Community Lounge',
-				'Lightning talks and Demos at the Mozilla Community Lounge',
+				'Futuristic Web AMA/panel with Surma, Isa Silveira, Charlie Gerard at the Mozilla Community Lounge',
+				'Lightning talks at the Mozilla Community Lounge',
+				'WebVR Demos, JS Dance Mat Fun at the Mozilla Community Lounge',
 				'Recycle Workshop by RePityke in the Small Hall'
 			]
 		},
@@ -70,7 +73,8 @@ module.exports = {
 		'1545': {
 			title: 'Coffee break by TRESORIT',
 			activities: [
-				'Demos at the Mozilla Community Lounge',
+				'Lightning talks at the Mozilla Community Lounge',
+				'WebVR Demos, JS Dance Mat Fun at the Mozilla Community Lounge',
 				'Recycle Workshop by RePityke in the Small Hall',
 			]
 		},
