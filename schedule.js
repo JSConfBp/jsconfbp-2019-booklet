@@ -9,7 +9,7 @@ module.exports = {
 		'1120': {
 			title: 'Coffee break by TRESORIT',
 			activities: [
-				'Mozilla Minutes AMA/panel about MDN with Ali Spivak at the Mozilla Community Lounge',
+				'Mozilla Minutes (AMA/panel) about MDN with Ali Spivak at the Mozilla Community Lounge',
 				'Recycle Workshop by RePityke in the Small Hall'
 			]
 		},
@@ -18,7 +18,7 @@ module.exports = {
 		'1300': {
 			title: 'Lunch by VACUUMLABS',
 			activities: [
-				'Hardware Hacking AMA/panel with Ramon Huidobro, Stephanie Nemeth, Tim Pietrusky at the Mozilla Community Lounge',
+				'Hardware Hacking Panel with Ramon Huidobro, Stephanie Nemeth, Tim Pietrusky at the Mozilla Community Lounge',
 				'Lightning talks and Demos at the Mozilla Community Lounge',
 				'WebVR Demos, JS Dance Mat Fun at the Mozilla Community Lounge',
 				'Recycle Workshop by RePityke in the Small Hall'
@@ -62,7 +62,7 @@ module.exports = {
 		'1315': {
 			title: 'Lunch by VACUUMLABS',
 			activities: [
-				'Futuristic Web AMA/panel with Surma, Isa Silveira, Charlie Gerard at the Mozilla Community Lounge',
+				'Futuristic Web Panel with Surma, Isa Silveira, Charlie Gerard at the Mozilla Community Lounge',
 				'Lightning talks at the Mozilla Community Lounge',
 				'WebVR Demos, JS Dance Mat Fun at the Mozilla Community Lounge',
 				'Recycle Workshop by RePityke in the Small Hall'
